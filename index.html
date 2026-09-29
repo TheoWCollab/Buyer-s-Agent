@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dior Buyer Agent</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            background: #f7f7f7;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .buy {
+            color: green;
+            font-weight: bold;
+        }
+
+        .wait {
+            color: orange;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Dior Prestige Buyer Agent</h1>
+
+<div id="content">
+
+Loading...
+
+</div>
+
+</div>
+
+<script>
+
+fetch('results.json')
+    .then(response => response.json())
+    .then(data => {
+
+        document.getElementById('content').innerHTML = `
+
+            <p><b>Product:</b> ${data.product}</p>
+
+            <p><b>Current Price:</b> $${data.price}</p>
+
+            <p><b>Cash Paid:</b> $${data.cash_paid}</p>
+
+            <p><b>Travel Net Cost:</b> $${data.travel_net_cost}</p>
+
+            <p><b>Target Cost:</b> $${data.target_cost}</p>
+
+            <p><b>Recommendation:</b>
+            <span class="buy">
+            ${data.recommendation}
+            </span></p>
+
+            <p><b>Last Updated:</b>
+            ${data.last_updated}</p>
+
+        `;
+    });
+
+</script>
+
+</body>
+</html>
