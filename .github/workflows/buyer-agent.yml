@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Buyer Agent
         run: |
-          python buyer_agent.py
+          python myer_price.py
 
       - name: Commit Updated Results
         run: |
