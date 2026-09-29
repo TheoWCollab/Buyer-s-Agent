@@ -54,7 +54,7 @@ Loading...
 
 <script>
 
-fetch('results.json')
+fetch('results.json?v=' + Date.now())
     .then(response => response.json())
     .then(data => {
 
