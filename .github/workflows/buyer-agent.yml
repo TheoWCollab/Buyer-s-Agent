@@ -4,7 +4,7 @@ on:
 
   schedule:
     # Every Sunday 8:00 AM Brisbane
-    - cron: '0 22 * * 6'
+    - cron: '0 22 * * *'
 
   workflow_dispatch:
 
